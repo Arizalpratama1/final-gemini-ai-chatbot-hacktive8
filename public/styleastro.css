@@ -1,0 +1,111 @@
+/* Background luar angkasa */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #0b0f2a, #050714, #000);
+}
+
+/* Bintang animasi */
+.space-bg::before,
+.space-bg::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  animation: moveStars 120s linear infinite;
+  opacity: 0.3;
+}
+
+.space-bg::after {
+  animation-duration: 200s;
+  opacity: 0.15;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-1000px); }
+}
+
+/* Container utama */
+.container {
+  width: 420px;
+  background: rgba(20, 25, 60, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(120, 150, 255, 0.3);
+  z-index: 2;
+}
+
+/* Judul */
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #cfe3ff;
+  text-shadow: 0 0 10px rgba(100, 150, 255, 0.6);
+}
+
+/* Chat box */
+.chat-box {
+  height: 350px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(0, 0, 20, 0.4);
+  box-shadow: inset 0 0 10px rgba(100, 150, 255, 0.2);
+}
+
+/* Scrollbar */
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background: #4a6cff;
+  border-radius: 10px;
+}
+
+/* Input form */
+form {
+  display: flex;
+  margin-top: 12px;
+  gap: 8px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+input::placeholder {
+  color: #b8c7ff;
+}
+
+/* Tombol */
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4a6cff, #8a5cff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(120,150,255,0.6);
+}
